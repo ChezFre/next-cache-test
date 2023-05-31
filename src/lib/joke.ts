@@ -10,7 +10,7 @@ const endpoint = "https://official-joke-api.appspot.com/random_joke";
 async function fetchJoke() {
   const response = await fetch(endpoint, {
     cache: "force-cache",
-    next: { tags: ["joke"], revalidate: 86400 },
+    next: { tags: ["joke"] },
   });
 
   if (!response.ok) return undefined;
