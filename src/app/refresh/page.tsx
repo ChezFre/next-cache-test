@@ -1,9 +1,17 @@
-import { RefreshButton } from "@/components/refreshButton";
+import { revalidateTag } from "next/cache";
 
-export default function Refresh() {
+export default async function Refresh() {
+  async function handleRefresh(data: FormData) {
+    "use server";
+
+    revalidateTag("joke");
+  }
+
   return (
     <main>
-      <RefreshButton />
+      <form action={handleRefresh}>
+        <button type="submit">Revalidate tag</button>
+      </form>
     </main>
   );
 }
