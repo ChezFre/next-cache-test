@@ -1,6 +1,6 @@
 import { revalidateTag } from "next/cache";
 import { redirect } from 'next/navigation'
-import { SubmitButton } from '@app/components/SubmitButton'
+import { SubmitButton } from '@/app/components/SubmitButton'
 
 
 export default async function Refresh() {
